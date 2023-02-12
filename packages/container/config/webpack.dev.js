@@ -1,0 +1,30 @@
+// Dependencias de terceros
+const { merge } = require('webpack-merge');
+const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
+
+// Configuraciones comunes
+const common = require('./webpack.common.js');
+const packageJson = require('../package.json');
+
+// Configuraciones de desarrollo
+const devConfig = {
+	mode: 'development',
+	devServer: {
+		port: 8080,
+		historyApiFallback: {
+			index: 'index.html',
+		},
+	},
+	plugins: [
+		new ModuleFederationPlugin({
+			name: 'container',
+			remotes: {
+				marketing: 'marketing@http://localhost:8081/remoteEntry.js',
+			},
+			// shared: ['react', 'react-dom'],
+			shared: packageJson.dependencies,
+		}),
+	],
+};
+
+module.exports = merge(common, devConfig);
