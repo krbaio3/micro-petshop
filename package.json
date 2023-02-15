@@ -23,6 +23,7 @@
 		"start": "npm start --workspaces --if-present",
 		"kill-port": "npx kill-port",
 		"custom": "concurrently --kill-others --names \"CONTAINER,MARKETING\" -c \"bgBlue.bold,bgGreen.bold\" \"npm run start -w=@css/container\" \"npm run start -w=@css/marketing\"",
+    "build": "npm run build --workspaces --if-present",
 		"prettier": "npm run format --workspaces --if-present",
 		"prettier:check": "prettier --check \"**/*.{js,jsx,css,scss,md}\"",
 		"lint:fix": "eslint --fix packages/**/*.{js,jsx}",

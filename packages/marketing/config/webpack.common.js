@@ -1,4 +1,3 @@
-const packageJson = require('../package.json');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
 	module: {

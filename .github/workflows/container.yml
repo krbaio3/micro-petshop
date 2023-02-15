@@ -33,7 +33,8 @@ jobs:
           HUSKY: ${{ env.HUSKY }}
           HUSKY_SKIP_INSTALL: ${{ env.HUSKY_SKIP_INSTALL }}
 
-      - uses: chrislennon/action-aws-cli@v1.1
+      - uses: shinyinc/action-aws-cli@v1.2
+      - run: echo ${{ secrets.AWS_DEFAULT_REGION }}
       - run: aws s3 sync dist s3://${{ secrets.S3_BUCKET_NAME}}/container/latest
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
