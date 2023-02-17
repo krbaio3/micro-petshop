@@ -6,12 +6,12 @@ on:
     branches:
       - master
     paths:
-      - 'packages/container/**'
+      - 'packages/**'
   pull_request:
     branches:
       - master
     paths:
-      - 'packages/container/**'
+      - 'packages/**'
 defaults:
   run:
     working-directory: packages/container
@@ -32,6 +32,7 @@ jobs:
         env:
           HUSKY: ${{ env.HUSKY }}
           HUSKY_SKIP_INSTALL: ${{ env.HUSKY_SKIP_INSTALL }}
+          PRODUCTION_DOMAIN: ${{ env.PRODUCTION_DOMAIN }}
 
       - uses: shinyinc/action-aws-cli@v1.2
       - run: aws s3 sync dist s3://${{ secrets.S3_BUCKET_NAME}}/container/latest
