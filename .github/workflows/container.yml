@@ -12,15 +12,15 @@ on:
       - master
     paths:
       - 'packages/**'
-env:
-  HUSKY: ${{ env.HUSKY }}
-  HUSKY_SKIP_INSTALL: ${{ env.HUSKY_SKIP_INSTALL }}
-  PRODUCTION_DOMAIN: ${{ env.PRODUCTION_DOMAIN }}
 defaults:
   run:
     working-directory: packages/container
 jobs:
   build:
+    env:
+      HUSKY: ${{ env.HUSKY }}
+      HUSKY_SKIP_INSTALL: ${{ env.HUSKY_SKIP_INSTALL }}
+      PRODUCTION_DOMAIN: ${{ env.PRODUCTION_DOMAIN }}
     runs-on: ubuntu-latest
     steps:
       #        - uses: actions/checkout@v2
