@@ -22,11 +22,11 @@ jobs:
       - uses: actions/checkout@v2
       - run: npm ci
         env:
-          HUSKY: ${{ env.HUSKY }}
-          HUSKY_SKIP_INSTALL: ${{ env.HUSKY_SKIP_INSTALL }}
+          HUSKY: ${{ secrets.HUSKY }}
+          HUSKY_SKIP_INSTALL: ${{ secrets.HUSKY_SKIP_INSTALL }}
       - run: npm run build
         env:
-          PRODUCTION_DOMAIN: ${{ env.PRODUCTION_DOMAIN }}
+          PRODUCTION_DOMAIN: ${{ secrets.PRODUCTION_DOMAIN }}
       - uses: shinyinc/action-aws-cli@v1.2
       - run: aws s3 sync dist s3://${{ secrets.S3_BUCKET_NAME}}/container/latest
         env:
