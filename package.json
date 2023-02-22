@@ -30,8 +30,7 @@
 		"lint:css": "&& stylelint \"**/*.s?css\" --fix",
 		"marketing:dev": "npm start -w @css/marketing",
 		"marketing:build": "npm run build -w @css/marketing",
-		"commit": "cz",
-    "prepare": "husky install"
+		"commit": "cz"
   },
 	"lint-staged": {
 		"**/*": "prettier --write --ignore-unknown"
