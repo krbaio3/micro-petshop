@@ -6,7 +6,6 @@ const packageJson = require('../package.json');
 const domain = process.env.PRODUCTION_DOMAIN || 'http://localhost:8081';
 
 console.log('domain', domain);
-console.log('version', packageJson.version);
 
 const prodConfig = {
 	mode: 'production',
