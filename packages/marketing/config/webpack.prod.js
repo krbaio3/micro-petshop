@@ -4,8 +4,6 @@ const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPl
 const common = require('./webpack.common');
 const packageJson = require('../package.json');
 
-console.log('==== version ====', packageJson.version);
-
 const prodConfig = {
 	mode: 'production',
 	output: {
