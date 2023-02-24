@@ -1,8 +1,13 @@
 import React, { Fragment } from 'react';
 import MarketingApp from './components/MarketingApp.jsx';
+import { BrowserRouter } from 'react-router-dom';
+import Header from './components/Header.jsx';
 
 export default () => (
-	<Fragment>
-		<MarketingApp />
-	</Fragment>
+	<BrowserRouter>
+		<Fragment>
+			<Header />
+			<MarketingApp />
+		</Fragment>
+	</BrowserRouter>
 );
