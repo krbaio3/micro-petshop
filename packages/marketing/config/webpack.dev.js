@@ -5,6 +5,7 @@ const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPl
 // Configuraciones comunes
 const common = require('./webpack.common.js');
 const packageJson = require('../package.json');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // Configuraciones de desarrollo
 const devConfig = {
@@ -12,7 +13,7 @@ const devConfig = {
 	devServer: {
 		port: 8081,
 		historyApiFallback: {
-			index: 'index.html',
+			index: '/index.html',
 		},
 	},
 	plugins: [
@@ -23,6 +24,9 @@ const devConfig = {
 				'./MarketingApp': './src/bootstrap.jsx',
 			},
 			shared: packageJson.dependencies,
+		}),
+		new HtmlWebpackPlugin({
+			template: './public/index.html',
 		}),
 	],
 };
