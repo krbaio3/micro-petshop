@@ -1,6 +1,6 @@
 import React from 'react';
-import { Route, Router, Switch } from 'react-router-dom';
-import { createGenerateClassName, StylesProvider } from '@material-ui/core';
+import { Switch, Route, Router } from 'react-router-dom';
+import { StylesProvider, createGenerateClassName } from '@material-ui/core/styles';
 
 import Landing from './components/Landing.jsx';
 import Pricing from './components/Pricing.jsx';
@@ -8,6 +8,7 @@ import Pricing from './components/Pricing.jsx';
 const generateClassName = createGenerateClassName({
 	productionPrefix: 'ma',
 });
+
 export default ({ history }) => {
 	return (
 		<StylesProvider injectFirst generateClassName={generateClassName}>
