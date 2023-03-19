@@ -20,20 +20,28 @@
 		"packages/*"
 	],
 	"scripts": {
-		"start": "npm start --workspaces --if-present",
-		"kill-port": "npx kill-port",
+		"build": "npx nx run-many --target=build",
+		"commit": "cz",
 		"custom": "concurrently --kill-others --names \"CONTAINER,MARKETING\" -c \"bgBlue.bold,bgGreen.bold\" \"npm run start -w=@css/container\" \"npm run start -w=@css/marketing\"",
-    "build": "npm run build --workspaces --if-present",
+		"kill-port": "npx kill-port",
+		"lint:css": "&& stylelint \"**/*.s?css\" --fix",
+		"lint:fix": "eslint --fix packages/**/*.{js,jsx}",
+		"marketing:build": "npm run build -w @css/marketing",
+		"marketing:dev": "npm start -w @css/marketing",
+		"nx:start": "npm start --workspaces --if-present",
 		"prettier": "npm run format --workspaces --if-present",
 		"prettier:check": "prettier --check \"**/*.{js,jsx,css,scss,md}\"",
-		"lint:fix": "eslint --fix packages/**/*.{js,jsx}",
-		"lint:css": "&& stylelint \"**/*.s?css\" --fix",
-		"marketing:dev": "npm start -w @css/marketing",
-		"marketing:build": "npm run build -w @css/marketing",
-		"commit": "cz"
-  },
+		"sort": "npx sort-package-json",
+		"start": "npx nx run-many --target=start",
+		"structure": "npx nx graph"
+	},
 	"lint-staged": {
 		"**/*": "prettier --write --ignore-unknown"
+	},
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
 	},
 	"dependencies": {
 		"concurrently": "^7.6.0"
@@ -42,6 +50,7 @@
 		"@commitlint/cli": "^17.4.2",
 		"@commitlint/config-angular": "^17.4.2",
 		"@commitlint/config-conventional": "^17.4.2",
+		"@nrwl/nx-cloud": "latest",
 		"@typescript-eslint/eslint-plugin": "^5.50.0",
 		"@typescript-eslint/parser": "^5.50.0",
 		"commitizen": "^4.3.0",
@@ -55,6 +64,7 @@
 		"eslint-plugin-unicorn": "^45.0.2",
 		"husky": "^8.0.3",
 		"lint-staged": "^13.1.0",
+		"nx": "15.8.5",
 		"prettier": "^2.8.3",
 		"stylelint": "^14.16.1",
 		"stylelint-config-prettier": "^9.0.4",
@@ -63,10 +73,5 @@
 	"engines": {
 		"node": ">=16.0.0",
 		"npm": ">=7.0.0"
-	},
-	"config": {
-		"commitizen": {
-			"path": "./node_modules/cz-conventional-changelog"
-		}
 	}
 }
