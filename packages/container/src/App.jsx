@@ -1,8 +1,9 @@
 import React, { Fragment } from 'react';
 import MarketingApp from './components/MarketingApp.jsx';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Header from './components/Header.jsx';
 import { createGenerateClassName, StylesProvider } from '@material-ui/core';
+import AuthApp from './components/AuthApp.jsx';
 
 const generateClassName = createGenerateClassName({
 	productionPrefix: 'co',
@@ -12,7 +13,10 @@ export default () => (
 		<BrowserRouter>
 			<Fragment>
 				<Header />
-				<MarketingApp />
+				<Switch>
+					<Route path='/auth' component={AuthApp} />
+					<Route path='/' component={MarketingApp} />
+				</Switch>
 			</Fragment>
 		</BrowserRouter>
 	</StylesProvider>

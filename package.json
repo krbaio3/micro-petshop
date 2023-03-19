@@ -28,11 +28,11 @@
 		"lint:fix": "eslint --fix packages/**/*.{js,jsx}",
 		"marketing:build": "npm run build -w @css/marketing",
 		"marketing:dev": "npm start -w @css/marketing",
-		"nx:start": "npm start --workspaces --if-present",
+		"start": "npm start --workspaces --if-present",
 		"prettier": "npm run format --workspaces --if-present",
 		"prettier:check": "prettier --check \"**/*.{js,jsx,css,scss,md}\"",
 		"sort": "npx sort-package-json",
-		"start": "npx nx run-many --target=start",
+		"nx:start": "npx nx run-many --target=start",
 		"structure": "npx nx graph"
 	},
 	"lint-staged": {

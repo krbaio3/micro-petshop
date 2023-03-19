@@ -1,14 +1,14 @@
 // Dependencias de terceros
 const { merge } = require('webpack-merge');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // Configuraciones comunes
 const common = require('./webpack.common.js');
 const packageJson = require('../package.json');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // Puerto de desarrollo
-const PORT = process.env.PORT || 8081;
+const PORT = process.env.PORT || 8082;
 
 // Configuraciones de desarrollo
 const devConfig = {
@@ -24,10 +24,10 @@ const devConfig = {
 	},
 	plugins: [
 		new ModuleFederationPlugin({
-			name: 'marketing',
+			name: 'authorization',
 			filename: 'remoteEntry.js',
 			exposes: {
-				'./MarketingApp': './src/bootstrap.jsx',
+				'./AuthApp': './src/bootstrap.jsx',
 			},
 			shared: packageJson.dependencies,
 		}),

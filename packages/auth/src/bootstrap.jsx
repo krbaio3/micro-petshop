@@ -4,7 +4,7 @@ import { createMemoryHistory, createBrowserHistory } from 'history';
 
 import App from './App.jsx';
 
-const selector = '#_marketing-dev-root';
+const selector = '#_auth-dev-root';
 
 // Mount function to start up the app
 const mount = (el, { onNavigate, defaultHistory }) => {
