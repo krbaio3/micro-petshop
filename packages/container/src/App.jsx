@@ -1,8 +1,9 @@
 import React, { Fragment } from 'react';
-import MarketingApp from './components/MarketingApp.jsx';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Header from './components/Header.jsx';
 import { createGenerateClassName, StylesProvider } from '@material-ui/core';
+// Custom Imports
+import Header from './components/Header.jsx';
+import MarketingApp from './components/MarketingApp.jsx';
 import AuthApp from './components/AuthApp.jsx';
 
 const generateClassName = createGenerateClassName({
