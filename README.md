@@ -118,7 +118,7 @@ changes organized and discoverable.
 
 ## Authors and acknowledgment
 
-Show your appreciation to those who have contributed to the project.
+John Krbaio is the author of this project.
 
 ## License
 
