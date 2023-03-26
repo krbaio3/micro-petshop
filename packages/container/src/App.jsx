@@ -9,6 +9,7 @@ import ProgressBar from './components/ProgressBar.jsx';
 const MarketingAppLazy = lazy(() => import('./components/MarketingApp.jsx'));
 const AuthAppLazy = lazy(() => import('./components/AuthApp.jsx'));
 
+// Styles
 const generateClassName = createGenerateClassName({
 	productionPrefix: 'co',
 });
