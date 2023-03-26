@@ -1,0 +1,24 @@
+{
+	"tasksRunnerOptions": {
+		"default": {
+			"runner": "@nrwl/nx-cloud",
+			"options": {
+				"cacheableOperations": ["build", "lint:fix"],
+				"accessToken": "ZDg0MzQ0MmEtODBlMS00ZjBkLTg5MTEtZDYxZTZhMjU0MTQwfHJlYWQtd3JpdGU="
+			}
+		}
+	},
+	"targetDefaults": {
+		"build": {
+			"dependsOn": ["^build"],
+			"outputs": ["{projectRoot}/dist"]
+		},
+		"lint:fix": {
+			"dependsOn": ["^lint:fix"]
+		},
+		"format": {
+			"dependsOn": ["^format"]
+		}
+	},
+	"defaultBase": "master"
+}
