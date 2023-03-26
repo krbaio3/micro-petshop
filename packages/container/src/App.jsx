@@ -5,6 +5,7 @@ import { createGenerateClassName, StylesProvider } from '@material-ui/core';
 import Header from './components/Header.jsx';
 import ProgressBar from './components/ProgressBar.jsx';
 
+// Components Lazy Loading
 const MarketingAppLazy = lazy(() => import('./components/MarketingApp.jsx'));
 const AuthAppLazy = lazy(() => import('./components/AuthApp.jsx'));
 
