@@ -2,12 +2,7 @@
 	"name": "@css/dashboard",
 	"version": "0.1.0",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "webpack serve --config config/webpack.dev.js",
-		"lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
-		"lint:fix": "eslint --fix src/**/*.{js,jsx,ts,tsx,json}",
-		"format": "prettier --write src/**/*.{js,jsx,ts,tsx,css,md,json,scss}",
-		"prettier:check": "prettier --check \"**/*.{js,jsx,css,scss,md}\""
+		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"dependencies": {
 		"chart.js": "3.7.1",
